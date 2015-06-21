@@ -18,15 +18,15 @@ makeCacheMatrix <- function(var = matrix()) {
 
 ## Write a short comment describing this function
 
-cacheSolve <- function(x, ...) {
+cacheSolve <- function(var, ...) {
         ## Return a matrix that is the inverse of 'x'
   inverse <- var$getinv()
   if(!is.null(inverse)) {
-    message("Getting cached data...")
+    message("getting cached data...")
     return(inverse)
   }
   data <- var$get()
   invserse <- solve(data, ...)
-  ty$setinv(inverse)
+  var$setinv(inverse)
   return(inverse)
 }
